@@ -4,33 +4,7 @@
   
   
   <entry>
-    <title></title>
-    <link href="/2022/12/27/nodejs%E6%A0%B9%E6%8D%AE%E7%88%B6%E8%A1%A8id%E5%85%B3%E8%81%94%E5%AD%97%E8%A1%A8%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2%E7%9A%84%E5%BC%82%E6%AD%A5%E9%97%AE%E9%A2%98/"/>
-    <url>/2022/12/27/nodejs%E6%A0%B9%E6%8D%AE%E7%88%B6%E8%A1%A8id%E5%85%B3%E8%81%94%E5%AD%97%E8%A1%A8%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2%E7%9A%84%E5%BC%82%E6%AD%A5%E9%97%AE%E9%A2%98/</url>
-    
-    <content type="html"><![CDATA[<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs js"><br><span class="hljs-built_in">exports</span>.<span class="hljs-property">getLeaveInfo</span> = <span class="hljs-function">(<span class="hljs-params">req, res</span>) =&gt;</span> &#123;<br>  db.<span class="hljs-title function_">query</span>(selectLeaveInfo, <span class="hljs-keyword">async</span> (err, result) =&gt; &#123;<br>    <span class="hljs-keyword">const</span> promiseList = [];<br>    <span class="hljs-keyword">if</span> (err) <span class="hljs-keyword">return</span> res.<span class="hljs-title function_">cc</span>(err);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> item <span class="hljs-keyword">of</span> result) &#123;<br>      promiseList.<span class="hljs-title function_">push</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> &#123;<br>        db.<span class="hljs-title function_">query</span>(selectRepeatInfo, item.<span class="hljs-property">id</span>, <span class="hljs-function">(<span class="hljs-params">err2, result2</span>) =&gt;</span> &#123;<br>          <span class="hljs-keyword">if</span> (err2) <span class="hljs-keyword">return</span> res.<span class="hljs-title function_">cc</span>(err);<br>          item.<span class="hljs-property">repeat</span> = result2;<br>          <span class="hljs-title function_">resolve</span>(item);<br>        &#125;)<br>      &#125;))<br>    &#125;<br>    <span class="hljs-title class_">Promise</span>.<span class="hljs-title function_">all</span>(promiseList).<span class="hljs-title function_">then</span>(<span class="hljs-function"><span class="hljs-params">rspList</span> =&gt;</span> &#123;<br>      res.<span class="hljs-title function_">send</span>(&#123; <span class="hljs-attr">status</span>: <span class="hljs-number">0</span>, <span class="hljs-attr">message</span>: <span class="hljs-string">&#x27;获取留言成功&#x27;</span>, <span class="hljs-attr">data</span>: rspList &#125;);<br>    &#125;)<br>  &#125;)<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title></title>
-    <link href="/2022/12/27/Navicat%E8%AE%BE%E8%AE%A1%E5%AD%97%E6%AE%B5%E6%80%BB%E7%BB%93/"/>
-    <url>/2022/12/27/Navicat%E8%AE%BE%E8%AE%A1%E5%AD%97%E6%AE%B5%E6%80%BB%E7%BB%93/</url>
-    
-    <content type="html"><![CDATA[<p>1、经常变化的字段用varchar；</p><p>2、知道固定长度的用char；</p><p>3、超过255字节的只能用varchar或者text；</p><p>4、能用varchar的地方不用text；</p><p>5、能够用数字类型的字段尽量选择数字类型而不用字符串类型，这会降低查询和连接的性能，并会增加存储开销。这是因为引擎在处理查询和连接回逐个比较字符串中每一个字符，而对于数字型而言只需要比较一次就够了；</p><p>6、同一张表出现多个大字段，能合并时尽量合并，不能合并时考虑分表，原因请考 优化InnoDB表BLOB,TEXT列的存储效率</p>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title></title>
+    <title>MySQL数据库相关操作</title>
     <link href="/2022/12/27/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/"/>
     <url>/2022/12/27/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/</url>
     
@@ -43,7 +17,20 @@
   
   
   <entry>
-    <title></title>
+    <title>Navicat设计字段总结</title>
+    <link href="/2022/12/27/Navicat%E8%AE%BE%E8%AE%A1%E5%AD%97%E6%AE%B5%E6%80%BB%E7%BB%93/"/>
+    <url>/2022/12/27/Navicat%E8%AE%BE%E8%AE%A1%E5%AD%97%E6%AE%B5%E6%80%BB%E7%BB%93/</url>
+    
+    <content type="html"><![CDATA[<p>1、经常变化的字段用varchar；</p><p>2、知道固定长度的用char；</p><p>3、超过255字节的只能用varchar或者text；</p><p>4、能用varchar的地方不用text；</p><p>5、能够用数字类型的字段尽量选择数字类型而不用字符串类型，这会降低查询和连接的性能，并会增加存储开销。这是因为引擎在处理查询和连接回逐个比较字符串中每一个字符，而对于数字型而言只需要比较一次就够了；</p><p>6、同一张表出现多个大字段，能合并时尽量合并，不能合并时考虑分表，原因请考 优化InnoDB表BLOB,TEXT列的存储效率</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>centOS7 安装MySQL</title>
     <link href="/2022/12/27/centOS7%20%E5%AE%89%E8%A3%85MySQL/"/>
     <url>/2022/12/27/centOS7%20%E5%AE%89%E8%A3%85MySQL/</url>
     

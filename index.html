@@ -16,17 +16,19 @@
   <meta name="author" content="Shaoin">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
-<meta property="og:site_name" content="Hexo">
+    <meta name="description" content="分享生活，分享技术，分享每一天">
+<meta property="og:type" content="website">
+<meta property="og:title" content="shaoin的个人博客">
+<meta property="og:url" content="http://blog.shaoin.love/index.html">
+<meta property="og:site_name" content="shaoin的个人博客">
+<meta property="og:description" content="分享生活，分享技术，分享每一天">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="Shaoin">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Hexo</title>
+  <title>shaoin的个人博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -58,7 +60,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"blog.shaoin.love","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -84,7 +86,7 @@
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>Fluid</strong>
+      <strong>博客标题</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -224,15 +226,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2022/12/27/nodejs%E6%A0%B9%E6%8D%AE%E7%88%B6%E8%A1%A8id%E5%85%B3%E8%81%94%E5%AD%97%E8%A1%A8%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2%E7%9A%84%E5%BC%82%E6%AD%A5%E9%97%AE%E9%A2%98/" target="_self">
-          
+        <a href="/2022/12/27/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/" target="_self">
+          MySQL数据库相关操作
         </a>
       </h1>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2022/12/27/nodejs%E6%A0%B9%E6%8D%AE%E7%88%B6%E8%A1%A8id%E5%85%B3%E8%81%94%E5%AD%97%E8%A1%A8%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2%E7%9A%84%E5%BC%82%E6%AD%A5%E9%97%AE%E9%A2%98/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2022/12/27/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/" target="_self">
         <div>
-          12345678910111213141516171819exports.getLeaveInfo = (req, res) =&gt; &#123;  db.query(selectLeaveInfo, async (err, result) =&gt; &#123;    const promiseList = [];    if (err) return res.cc(err);    fo
+          MySQL相关语句命令说明   命令 说明    mysql -u root -p; 登录MySQL   show databases; 展示所有的数据库   create database xxx charset utf8; 创建名为xxx的数据库   drop database xxx; 删除名为xxx的数据库   use database; 选择数据库   show tables; 展示所有
         </div>
       </a>
 
@@ -240,7 +242,7 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2022-12-27 10:31" pubdate>
+            <time datetime="2022-12-27 16:08" pubdate>
               2022-12-27
             </time>
           </div>
@@ -258,7 +260,7 @@
       <h1 class="index-header">
         
         <a href="/2022/12/27/Navicat%E8%AE%BE%E8%AE%A1%E5%AD%97%E6%AE%B5%E6%80%BB%E7%BB%93/" target="_self">
-          
+          Navicat设计字段总结
         </a>
       </h1>
 
@@ -273,40 +275,7 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2022-12-27 10:31" pubdate>
-              2022-12-27
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2022/12/27/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/" target="_self">
-          
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2022/12/27/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/" target="_self">
-        <div>
-          MySQL相关语句命令说明   命令 说明    mysql -u root -p; 登录MySQL   show databases; 展示所有的数据库   create database xxx charset utf8; 创建名为xxx的数据库   drop database xxx; 删除名为xxx的数据库   use database; 选择数据库   show tables; 展示所有
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-12-27 10:31" pubdate>
+            <time datetime="2022-12-27 16:08" pubdate>
               2022-12-27
             </time>
           </div>
@@ -324,7 +293,7 @@
       <h1 class="index-header">
         
         <a href="/2022/12/27/centOS7%20%E5%AE%89%E8%A3%85MySQL/" target="_self">
-          
+          centOS7 安装MySQL
         </a>
       </h1>
 
@@ -339,7 +308,7 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2022-12-27 10:30" pubdate>
+            <time datetime="2022-12-27 16:08" pubdate>
               2022-12-27
             </time>
           </div>
