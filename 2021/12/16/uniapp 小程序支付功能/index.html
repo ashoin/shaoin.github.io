@@ -16,21 +16,21 @@
   <meta name="author" content="Shaoin">
   <meta name="keywords" content="">
   
-    <meta name="description" content="在使用阿里云ECS进行ssh时【使用ssh客户端连接阿里云服务器】，只要稍稍过一段时间不操作就会自动断开连接，输入以下命令，解决办法如下：  123456789101112131415[root@shaoin ~]# vim &#x2F;etc&#x2F;ssh&#x2F;sshd_config找到以下两项配置[默认情况下，此两项是注释掉的]:#ClientAliveInterval 0#ClientAliveCountMa">
+    <meta name="description" content="项目需求项目生成订单，需要用户通过小程序进行支付。 解决方案使用uni.requestPayment()，调用小程序中的付款功能。 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253&lt;script&gt;	export default &amp;#123;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="centOS7 安装MySQL">
-<meta property="og:url" content="http://blog.shaoin.love/2022/12/27/%E9%98%BF%E9%87%8C%E4%BA%91centOS7%20%E5%AE%89%E8%A3%85MySQL/index.html">
+<meta property="og:title" content="uniapp 小程序支付功能">
+<meta property="og:url" content="http://blog.shaoin.love/2021/12/16/uniapp%20%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%94%AF%E4%BB%98%E5%8A%9F%E8%83%BD/index.html">
 <meta property="og:site_name" content="shaoin的个人博客">
-<meta property="og:description" content="在使用阿里云ECS进行ssh时【使用ssh客户端连接阿里云服务器】，只要稍稍过一段时间不操作就会自动断开连接，输入以下命令，解决办法如下：  123456789101112131415[root@shaoin ~]# vim &#x2F;etc&#x2F;ssh&#x2F;sshd_config找到以下两项配置[默认情况下，此两项是注释掉的]:#ClientAliveInterval 0#ClientAliveCountMa">
+<meta property="og:description" content="项目需求项目生成订单，需要用户通过小程序进行支付。 解决方案使用uni.requestPayment()，调用小程序中的付款功能。 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253&lt;script&gt;	export default &amp;#123;">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-12-27T08:08:02.000Z">
-<meta property="article:modified_time" content="2023-01-11T02:02:43.648Z">
+<meta property="article:published_time" content="2021-12-16T11:00:00.000Z">
+<meta property="article:modified_time" content="2023-01-11T04:06:14.030Z">
 <meta property="article:author" content="Shaoin">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>centOS7 安装MySQL - shaoin的个人博客</title>
+  <title>uniapp 小程序支付功能 - shaoin的个人博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -196,7 +196,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="centOS7 安装MySQL"></span>
+            <span id="subtitle" data-typed-text="uniapp 小程序支付功能"></span>
           
         </div>
 
@@ -207,8 +207,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-12-27 16:08" pubdate>
-          2022年12月27日 下午
+        <time datetime="2021-12-16 19:00" pubdate>
+          2021年12月16日 晚上
         </time>
       </span>
     
@@ -268,55 +268,95 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">centOS7 安装MySQL</h1>
+            <h1 style="display: none">uniapp 小程序支付功能</h1>
             
             
               <div class="markdown-body">
                 
-                <ol>
-<li>在使用阿里云<code>ECS</code>进行<code>ssh</code>时【使用<code>ssh</code>客户端连接阿里云服务器】，只要稍稍过一段时间不操作就会自动断开连接，输入以下命令，解决办法如下：</li>
-</ol>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs c">[root@shaoin ~]<span class="hljs-meta"># vim /etc/ssh/sshd_config</span><br><br>找到以下两项配置[默认情况下，此两项是注释掉的]:<br>#ClientAliveInterval <span class="hljs-number">0</span><br>#ClientAliveCountMax <span class="hljs-number">3</span><br><br>将其修改为：<br>ClientAliveInterval <span class="hljs-number">30</span><br>ClientAliveCountMax <span class="hljs-number">86400</span><br><br>具体含义:<br><span class="hljs-number">1</span>、客户端每隔多少秒向服务发送一个心跳数据，<span class="hljs-number">30</span>秒<br><span class="hljs-number">2</span>、客户端多少秒没有相应，服务器自动断掉连接，配置的是<span class="hljs-number">24</span>小时<br>    <br>:wq退出<br></code></pre></td></tr></table></figure>
+                <h3 id="项目需求"><a href="#项目需求" class="headerlink" title="项目需求"></a>项目需求</h3><p>项目生成订单，需要用户通过小程序进行支付。</p>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>使用uni.requestPayment()，调用小程序中的付款功能。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><code class="hljs js"><br>&lt;script&gt;<br>	<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;<br>		<span class="hljs-title function_">data</span>(<span class="hljs-params"></span>) &#123;<br>			<span class="hljs-keyword">return</span> &#123;<br>				<span class="hljs-attr">request</span>:&#123;<br>          <span class="hljs-attr">id</span>:xxxxx,<br>          <span class="hljs-attr">info</span>:<span class="hljs-string">&#x27;xxxx&#x27;</span><br>        &#125;<br>			&#125;<br>		&#125;,<br>		<span class="hljs-title function_">onLoad</span>(<span class="hljs-params"></span>) &#123;<br><br>		&#125;,<br>		<span class="hljs-attr">methods</span>: &#123;<br>			<span class="hljs-comment">// 提交订单</span><br>			<span class="hljs-title function_">subOrder</span>(<span class="hljs-params"></span>) &#123;<br>        <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">post</span>(<span class="hljs-string">&quot;api/order/createOrder&quot;</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">request</span>).<span class="hljs-title function_">then</span>(<span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> &#123;<br>					<span class="hljs-keyword">if</span> (res.<span class="hljs-property">code</span> == <span class="hljs-number">0</span>) &#123;<br>						<span class="hljs-comment">// 得到订单的反参调用微信支付</span><br>						<span class="hljs-keyword">let</span> pay = <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">parse</span>(res.<span class="hljs-property">data</span>.<span class="hljs-property">prepayId</span>);<br>						uni.<span class="hljs-title function_">requestPayment</span>(&#123;<br>							<span class="hljs-attr">timeStamp</span>: pay.<span class="hljs-property">timeStamp</span>,<br>							<span class="hljs-attr">nonceStr</span>: pay.<span class="hljs-property">nonceStr</span>,<br>							<span class="hljs-attr">package</span>: pay.<span class="hljs-property">package</span>,<br>							<span class="hljs-attr">signType</span>: pay.<span class="hljs-property">signType</span>,<br>							<span class="hljs-attr">paySign</span>: pay.<span class="hljs-property">paySign</span>,<br>							<span class="hljs-comment">// 支付成功的回调</span><br>							<span class="hljs-title function_">success</span>(<span class="hljs-params">result</span>) &#123;<br>								<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(result)<br>								<span class="hljs-keyword">if</span> (result.<span class="hljs-property">errMsg</span> == <span class="hljs-string">&quot;requestPayment:ok&quot;</span>) &#123;<br>									uni.<span class="hljs-title function_">showToast</span>(&#123;<br>										<span class="hljs-attr">icon</span>: <span class="hljs-string">&quot;success&quot;</span>,<br>										<span class="hljs-attr">title</span>: <span class="hljs-string">&quot;购买成功！&quot;</span><br>									&#125;)<br>							 &#125;<br><br>							&#125;,<br>							<span class="hljs-comment">// 支付失败回调</span><br>							<span class="hljs-title function_">fail</span>(<span class="hljs-params">err</span>) &#123;<br>								uni.<span class="hljs-title function_">showToast</span>(&#123;<br>									<span class="hljs-attr">icon</span>: <span class="hljs-string">&quot;none&quot;</span>,<br>									<span class="hljs-attr">title</span>: <span class="hljs-string">&quot;支付失败&quot;</span><br>								&#125;)<br>							&#125;<br>						&#125;)<br>					&#125;<br>				&#125;);<br>      &#125;<br>		&#125;<br>	&#125;<br>&lt;/script&gt;<br><br></code></pre></td></tr></table></figure>
 
-<ol start="2">
-<li>去 <a target="_blank" rel="noopener" href="https://downloads.mysql.com/archives/community/">https://downloads.mysql.com/archives/community/</a> 下载MySQL安装包；</li>
-</ol>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs c">product version：选择版本；<br><br>operating System：操作系统； 选择Red Hat Enterprise Linux / Oracle Linux<br><br>OS Version：版本；选择all<br></code></pre></td></tr></table></figure>
-
-
-
-<ol start="3">
-<li>将下载的包放到服务器&#x2F;root目录下；再执行解压指令；</li>
-</ol>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">[root@shaoin ~]<span class="hljs-meta"># tar -xvf mysql.xx.xx.xx-x.elxx.x86_64.rpm.bundle.tar;</span><br></code></pre></td></tr></table></figure>
-
-<ol start="4">
-<li>删除服务器上自带的mariadb</li>
-</ol>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c">[root@shaoin ~]<span class="hljs-meta"># rpm -qa|grep mariadb;</span><br>[root@shaoin ~]<span class="hljs-meta"># rpm -e --nodeps mariadb-libs;</span><br></code></pre></td></tr></table></figure>
-
-<ol start="5">
-<li>按顺序安装MySQL的相关文件</li>
-</ol>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs c">[root@shaoin ~]<span class="hljs-meta"># rpm -ivh mysql-community-common-xxxx-xxxx-xxx-xxx-xxx;</span><br>[root@shaoin ~]<span class="hljs-meta"># rpm -ivh mysql-community-client-plugins-xxxx-xxxx-xxx-xxx-xxx;</span><br>[root@shaoin ~]<span class="hljs-meta"># rpm -ivh mysql-mysql-community-libs-xxxx-xxxx-xxx-xxx-xxx;</span><br>[root@shaoin ~]<span class="hljs-meta"># rpm -ivh mysql-mysql-community-client-xxxx-xxxx-xxx-xxx-xxx;</span><br>[root@shaoin ~]<span class="hljs-meta"># rpm -ivh mysql-mysql-community-icu-data-files-xxxx-xxxx-xxx-xxx-xxx;</span><br>[root@shaoin ~]<span class="hljs-meta"># rpm -ivh mysql-mysql-community-serve-xxxx-xxxx-xxx-xxx-xxx;</span><br></code></pre></td></tr></table></figure>
-
-<ol start="6">
-<li>关于libaio报错安装</li>
-</ol>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">[root@shaoin ~]<span class="hljs-meta"># yum -y install libaio;		<span class="hljs-comment">//安装libaio包 再去安装报错的指令；</span></span><br></code></pre></td></tr></table></figure>
-
-<ol start="7">
-<li>初始化MySQL</li>
-</ol>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs c">[root@shaoin ~]<span class="hljs-meta"># mysqld --initialize --console;</span><br>[root@shaoin ~]<span class="hljs-meta"># chown -R mysql:mysql /var/lib/mysql/</span><br>[root@shaoin ~]<span class="hljs-meta"># systemctl start mysqld</span><br>[root@shaoin ~]<span class="hljs-meta"># cat /var/log/mysqld.log|grep localhost <span class="hljs-comment">// 查询初始默认密码；</span></span><br>[root@shaoin ~]<span class="hljs-meta"># mysql -uroot -p</span><br>Enter password:       <span class="hljs-comment">//输入默认密码</span><br></code></pre></td></tr></table></figure>
-
-<ol start="8">
-<li>修改密码</li>
-</ol>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs c">mysql&gt; alter user <span class="hljs-string">&#x27;root&#x27;</span>@<span class="hljs-string">&#x27;localhost&#x27;</span> identified by <span class="hljs-string">&#x27;123456&#x27;</span>;<br>mysql&gt; <span class="hljs-built_in">exit</span>;<br>[root@shaoin ~]<span class="hljs-meta"># mysql -uroot -p</span><br>Enter password:       <span class="hljs-comment">//输入123456</span><br>mysql&gt; show databases;<br>mysql&gt; <span class="hljs-built_in">exit</span>;<br></code></pre></td></tr></table></figure>
-
+<table>
+<thead>
+<tr>
+<th align="left">参数名</th>
+<th align="left">类型</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">provider</td>
+<td align="left">String</td>
+<td align="center">服务提供商，通过 <a target="_blank" rel="noopener" href="https://uniapp.dcloud.io/api/plugins/provider">uni.getProvider</a> 获取。</td>
+</tr>
+<tr>
+<td align="left">orderInfo</td>
+<td align="left">String&#x2F;Object</td>
+<td align="center">订单数据</td>
+</tr>
+<tr>
+<td align="left">timeStamp</td>
+<td align="left">String</td>
+<td align="center">时间戳</td>
+</tr>
+<tr>
+<td align="left">nonceStr</td>
+<td align="left">String</td>
+<td align="center">随机字符串，长度为32个字符以下。</td>
+</tr>
+<tr>
+<td align="left">package</td>
+<td align="left">String</td>
+<td align="center">统一下单接口返回的 prepay_id 参数值，提交格式如：prepay_id&#x3D;xx。</td>
+</tr>
+<tr>
+<td align="left">signType</td>
+<td align="left">String</td>
+<td align="center">签名算法，暂支持 MD5。</td>
+</tr>
+<tr>
+<td align="left">paySign</td>
+<td align="left">String</td>
+<td align="center">签名，具体签名方案参见 <a target="_blank" rel="noopener" href="https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=7_7&index=3">微信小程序支付文档</a></td>
+</tr>
+<tr>
+<td align="left">bannedChannels</td>
+<td align="left">Array<String></td>
+<td align="center">需要隐藏的支付方式，详见 <a target="_blank" rel="noopener" href="https://smartprogram.baidu.com/docs/develop/api/open_payment/#requestPolymerPayment/">百度小程序支付文档</a></td>
+</tr>
+<tr>
+<td align="left">service</td>
+<td align="left">Number</td>
+<td align="center">固定值：1（拉起小程序收银台）开发者如果不希望使用字节跳动小程序收银台，service设置为3&#x2F;4时，可以直接拉起微信&#x2F;支付宝进行支付：service&#x3D;3： 微信API支付，不拉起小程序收银台；service&#x3D;4： 支付宝API支付，不拉起小程序收银台。其中service&#x3D;3、4，仅在1.35.0.1+基础库(头条743+)支持</td>
+</tr>
+<tr>
+<td align="left">_debug</td>
+<td align="left">Number</td>
+<td align="center">仅限调试用</td>
+</tr>
+<tr>
+<td align="left">getOrderStatus</td>
+<td align="left">Function</td>
+<td align="center">商户前端实现的查询支付订单状态方法（该方法需要返回个Promise对象）。 service&#x3D;3、4时不需要传。</td>
+</tr>
+<tr>
+<td align="left">success</td>
+<td align="left">Function</td>
+<td align="center">接口调用成功的回调</td>
+</tr>
+<tr>
+<td align="left">fail</td>
+<td align="left">Function</td>
+<td align="center">接口调用失败的回调函数</td>
+</tr>
+<tr>
+<td align="left">complete</td>
+<td align="left">Function</td>
+<td align="center">接口调用结束的回调函数（调用成功、失败都会执行）</td>
+</tr>
+</tbody></table>
 <hr>
-
 
                 
               </div>
@@ -334,8 +374,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>centOS7 安装MySQL</div>
-      <div>http://blog.shaoin.love/2022/12/27/阿里云centOS7 安装MySQL/</div>
+      <div>uniapp 小程序支付功能</div>
+      <div>http://blog.shaoin.love/2021/12/16/uniapp 小程序支付功能/</div>
     </div>
     <div class="license-meta">
       
@@ -347,7 +387,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年12月27日</div>
+          <div>2021年12月16日</div>
         </div>
       
       
@@ -379,21 +419,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/12/27/Navicat%E8%AE%BE%E8%AE%A1%E5%AD%97%E6%AE%B5%E6%80%BB%E7%BB%93/" title="Navicat设计字段总结">
+                      <a href="/2021/12/21/css%20%E5%AD%97%E4%BD%93%E6%B8%90%E5%8F%98%E8%89%B2/" title="css 字体渐变色">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Navicat设计字段总结</span>
+                        <span class="hidden-mobile">css 字体渐变色</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
-                    
-                      <a href="/2022/12/27/%E9%A1%B9%E7%9B%AE%E8%BF%90%E8%A1%8C%E6%8A%A5%E9%94%99%EF%BC%9ACannot%20find%20module%20%E2%80%98@vuecli-shared-utils%E2%80%98/" title="阿里云centOS7 安装MySQL">
-                        <span class="hidden-mobile">阿里云centOS7 安装MySQL</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
                     
                   </article>
                 </div>
