@@ -20,7 +20,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="uniapp 兼容IOS长按保存图片功能">
 <meta property="og:url" content="http://blog.shaoin.love/2021/06/18/uniapp%20%E5%85%BC%E5%AE%B9IOS%E9%95%BF%E6%8C%89%E4%BF%9D%E5%AD%98%E5%9B%BE%E7%89%87%E5%8A%9F%E8%83%BD/index.html">
-<meta property="og:site_name" content="shaoin的个人博客">
+<meta property="og:site_name" content="欢迎访问shaoin的博客">
 <meta property="og:description" content="问题描述 uniapp  H5项目开发中遇到长按图片保存的兼容性问题；在Android浏览器中长按保存没得问题，但是在IOS浏览器中会出现长按没有反应的现象。 处理问题此类问题在vue项目中也有出现过，解决的核心是给img标签添加 -webkit-touch-callout: default 的 style 属性 1&lt;img :src&#x3D;&quot;showImageUrl&quot; sty">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-06-18T09:04:32.000Z">
@@ -30,7 +30,7 @@
   
   
   
-  <title>uniapp 兼容IOS长按保存图片功能 - shaoin的个人博客</title>
+  <title>uniapp 兼容IOS长按保存图片功能 - 欢迎访问shaoin的博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -85,6 +85,14 @@
 
 
 <body>
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"/>
+  <script src="https://sucai.erhe.group/live2d/widget/autoload.js"></script>
+
+  <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 9999; pointer-events: none;" ></canvas>
+  <script src="https://cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+  <script src="https://script-1256884783.file.myqcloud.com/cursor/explosion.min.js"></script>
+
   
 
   <header>
@@ -94,7 +102,7 @@
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>博客标题</strong>
+      <strong>shaoin的个人博客</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -631,5 +639,5 @@
   <noscript>
     <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":200,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
