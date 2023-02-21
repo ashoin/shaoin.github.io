@@ -2,6 +2,15 @@
 <urlset xmlns="https://blog.shaoin.love">
   
   <url>
+    <loc>https://blog.shaoin.love/about/index.html</loc>
+    
+    <lastmod>2023-02-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.shaoin.love/2022/12/27/%E9%98%BF%E9%87%8C%E4%BA%91centOS7%20%E5%AE%89%E8%A3%85MySQL/</loc>
     
     <lastmod>2023-02-21</lastmod>
@@ -672,13 +681,6 @@
   </url>
   
   <url>
-    <loc>https://blog.shaoin.love/tags/react/</loc>
-    <lastmod>2023-02-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.shaoin.love/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/</loc>
     <lastmod>2023-02-21</lastmod>
     <changefreq>weekly</changefreq>
@@ -686,7 +688,7 @@
   </url>
   
   <url>
-    <loc>https://blog.shaoin.love/tags/hexo/</loc>
+    <loc>https://blog.shaoin.love/tags/react/</loc>
     <lastmod>2023-02-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -694,6 +696,13 @@
   
   <url>
     <loc>https://blog.shaoin.love/tags/html/</loc>
+    <lastmod>2023-02-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.shaoin.love/tags/hexo/</loc>
     <lastmod>2023-02-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
